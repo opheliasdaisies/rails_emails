@@ -30,4 +30,10 @@ class EmailsController < ApplicationController
       redirect_to @email
     end
   end
+
+  def destroy
+    @email = Email.find(params[:id])
+    @email.destroy
+    redirect_to emails_url
+  end
 end
