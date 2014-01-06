@@ -1,7 +1,12 @@
 class AddEmailFields < ActiveRecord::Migration
-  def up
-  end
+  def change
+    create_table :emails do |t|
+      t.string :to
+      t.string :from
+      t.string :subject
+      t.text :body
 
-  def down
+      t.timestamps
+    end
   end
 end
