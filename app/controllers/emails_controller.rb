@@ -10,7 +10,7 @@ class EmailsController < ApplicationController
   def create
     @email = Email.new(params[:email])
     if @email.save
-      redirect_to @post
+      redirect_to @email
     else
       render new
     end
