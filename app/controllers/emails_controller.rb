@@ -19,4 +19,15 @@ class EmailsController < ApplicationController
   def show
     @email = Email.find(params[:id])
   end
+
+  def edit
+    @email = Email.find(params[:id])
+  end
+
+  def update
+    @email = Email.find(params[:id])
+    if @email.update_attributes(params[:email])
+      redirect_to @email
+    end
+  end
 end
