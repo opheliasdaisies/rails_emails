@@ -6,4 +6,13 @@ class EmailsController < ApplicationController
   def new
     @email = Email.new
   end
+
+  def create
+    @email = Email.new(params[:email])
+    if @email.save
+      redirect_to @post
+    else
+      render new
+    end
+  end
 end
